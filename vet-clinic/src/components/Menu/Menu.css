@@ -1,0 +1,18 @@
+#menu{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5vh 5vw;
+    background: forestgreen;
+}
+
+button, input{
+    width: 15vw;
+    padding: 1vh 1vw;
+    font-size: 2vh;
+}
+
+input{
+    color: gray;
+}

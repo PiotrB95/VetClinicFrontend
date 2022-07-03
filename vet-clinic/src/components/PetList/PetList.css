@@ -1,0 +1,10 @@
+#petList{
+    width: 50%;
+    background-color: white;
+    font-size: 4vh;
+    margin-top: 1vh;
+    padding: 1.5vh 2vw;
+    text-align: center;
+    border: 5px solid forestgreen;
+    border-radius: 20px;
+}
