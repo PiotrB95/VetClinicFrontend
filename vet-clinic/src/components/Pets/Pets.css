@@ -1,6 +1,6 @@
 #pets{
     position: fixed;
-    width:50%;
+    width:70%;
     color: black;
     height: 60vh;
     background-color: white;
@@ -10,3 +10,26 @@
     padding: 1vh 1vw;
     overflow: auto;
 }
+
+table, td, tr, th{
+    border-collapse: collapse;
+    border: 2px solid black;
+    text-align: center;
+}
+table {
+    width: 100%;
+    margin-top: 2vh;
+}
+
+tr,th{
+    width: 10%;
+}
+
+.petsButtons{
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0px;
+    font-size: 20px;
+}
+
+
