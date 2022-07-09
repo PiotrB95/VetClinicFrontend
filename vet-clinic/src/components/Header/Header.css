@@ -9,3 +9,10 @@ header{
     background-image: url('./menuBackground.jpg');
     font-family: "Comic Sans MS";
 }
+
+a{
+    font-size: 5vh;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}

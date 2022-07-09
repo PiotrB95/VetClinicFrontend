@@ -7,29 +7,33 @@
     margin-top: 7vh;
     border: 5px solid forestgreen;
     border-radius: 10px 10px 10px 10px;
-    padding: 1vh 1vw;
+    padding: 0vh 1vw;
+    padding-bottom: 2vh;
     overflow: auto;
 }
 
 table, td, tr, th{
     border-collapse: collapse;
-    border: 2px solid black;
     text-align: center;
+    border: none;
 }
 table {
     width: 100%;
-    margin-top: 2vh;
+    marigin-top: 2vh;
+
+
 }
 
-tr,th{
+td,th{
     width: 10%;
 }
 
-.petsButtons{
-    width: 100%;
-    cursor: pointer;
-    border-radius: 0px;
-    font-size: 20px;
-}
 
+th {
+    background: white;
+    position: sticky;
+    top: 0vh; /* Don't forget this, required for the stickiness */
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
 

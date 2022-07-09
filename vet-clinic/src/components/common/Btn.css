@@ -1,0 +1,22 @@
+.petsButtons{
+    width: 60%;
+    cursor: pointer;
+    border-radius: 0;
+    font-size: 2vh;
+
+}
+
+.linkButton{
+    width: 15vw;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 1s;
+    cursor: pointer;
+    font-size: 2vh;
+}
+
+.linkButton:hover{
+    color: white;
+    font-size: 2.2vh;
+}

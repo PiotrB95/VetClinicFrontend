@@ -1,6 +1,7 @@
 import React, {FormEvent, useContext, useState} from "react";
 import './Menu.css';
 import {SearchContext} from "../../context/search.context";
+import {Btn} from "../common/Btn";
 
 export const Menu = () =>{
 
@@ -15,11 +16,11 @@ export const Menu = () =>{
     return (
         <div id='menu'>
             <p>
-                <button>➕ Dodaj nowego pacjenta</button>
+                <Btn text='➕ Dodaj nowego pacjenta' to='/addPet'/>
             </p>
             <form onSubmit={setSearchFromLocalState}>
-                <input type="text" value={inputVal} onChange={e => setInputVal(e.target.value)}/>
-                <button>🔎 Wyszukaj pacjenta</button>
+                <input className="search" type="text" value={inputVal} onChange={e => setInputVal(e.target.value)}/>
+                <button className="search">🔎 Wyszukaj pacjenta</button>
             </form>
         </div>
     )

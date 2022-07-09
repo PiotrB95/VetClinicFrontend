@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import './Pets.css';
 import {SearchContext} from "../../context/search.context";
 import {PetEntity} from '../../../../../Backend/types';
+import {Btn} from "../common/Btn";
 
 export const Pets = () =>{
     const {search} = useContext(SearchContext);
@@ -21,7 +22,8 @@ export const Pets = () =>{
         <div id='pets'>
             <table>
                 <tr>
-                    <th>Imię </th>
+                    <th>Lp.</th>
+                    <th>Imię</th>
                     <th>Gatunek</th>
                     <th>Wiek</th>
                     <th>Właściciel</th>
@@ -31,8 +33,9 @@ export const Pets = () =>{
                     <th></th>
                     <th></th>
                 </tr>
-            {pets.map(pet =>(
+            {pets.map((pet,index) =>(
                 <tr key = {pet.id}>
+                    <td>{index + 1 + '.'}</td>
                     <td>{pet.petName}</td>
                     <td>{pet.petType}</td>
                     <td>{pet.petAge}</td>
@@ -40,8 +43,8 @@ export const Pets = () =>{
                     <td>{pet.ownerPhone}</td>
                     <td>{String(pet.lastVaccinate).substring(0,10)}</td>
                     <td>{String(pet.nextVaccinate).substring(0,10)}</td>
-                    <td><button className='petsButtons'>❌</button></td>
-                    <td><button className='petsButtons'>💉</button></td>
+                    <td><Btn text='❌'/></td>
+                    <td><Btn text='💉'/></td>
                 </tr>
             ))}
             </table>

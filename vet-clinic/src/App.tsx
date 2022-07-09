@@ -6,6 +6,8 @@ import {Menu} from "./components/Menu/Menu";
 import {PetList} from "./components/PetList/PetList";
 import {Pets} from "./components/Pets/Pets";
 import { SearchContext } from './context/search.context';
+import {Route, Routes} from "react-router-dom";
+import {AddPetForm} from "./components/AddPetForm/AddPetForm";
 
 
 function App() {
@@ -13,15 +15,26 @@ function App() {
 
   return <>
     <SearchContext.Provider value={{search,setSearch}}>
-      <div id="fixed">
-        <Header/>
-        <Module/>
-        <Menu/>
-        <PetList/>
-      </div>
-      <div id="movingPetList">
-        <Pets/>
-      </div>
+      <Routes>
+        <Route path="/" element={
+          <>
+          <div id="fixed">
+            <Header/>
+            <Menu/>
+            <PetList/>
+          </div>
+          <div id="movingPetList">
+            <Pets/>
+          </div>
+          </>
+        }/>
+        <Route path="/addPet" element={
+          <>
+            <Header/>
+            <AddPetForm/>
+          </>
+          }/>
+      </Routes>
     </SearchContext.Provider>
   </>
 }
