@@ -2,7 +2,8 @@ import React, {useContext, useEffect, useState} from "react";
 import './Pets.css';
 import {SearchContext} from "../../context/search.context";
 import {PetEntity} from '../../../../../Backend/types';
-import {Btn} from "../common/Btn";
+import {Btn} from "../common/Btn/Btn";
+import { ActionBtn } from "../common/ActionBtn/ActionBtn";
 
 export const Pets = () =>{
     const {search} = useContext(SearchContext);
@@ -16,7 +17,6 @@ export const Pets = () =>{
             setPets(data);
         })();
     },[search]);
-
 
     return <>
         <div id='pets'>
@@ -43,8 +43,8 @@ export const Pets = () =>{
                     <td>{pet.ownerPhone}</td>
                     <td>{String(pet.lastVaccinate).substring(0,10)}</td>
                     <td>{String(pet.nextVaccinate).substring(0,10)}</td>
-                    <td><Btn text='❌'/></td>
-                    <td><Btn text='💉'/></td>
+                    <td><ActionBtn text='❌' petId={pet.id} to={`/deletePet/${pet.id}`}/></td>
+                    <td><ActionBtn text='💉' petId={pet.id} to='/petVaccinate'/></td>
                 </tr>
             ))}
             </table>

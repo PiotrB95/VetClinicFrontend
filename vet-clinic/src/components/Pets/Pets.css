@@ -32,7 +32,7 @@ td,th{
 th {
     background: white;
     position: sticky;
-    top: 0vh; /* Don't forget this, required for the stickiness */
+    top: 0vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
 }

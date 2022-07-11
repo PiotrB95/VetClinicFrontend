@@ -1,7 +1,7 @@
 import React, {FormEvent, useContext, useState} from "react";
 import './Menu.css';
 import {SearchContext} from "../../context/search.context";
-import {Btn} from "../common/Btn";
+import {Btn} from "../common/Btn/Btn";
 
 export const Menu = () =>{
 
@@ -12,6 +12,7 @@ export const Menu = () =>{
         e.preventDefault();
         setSearch(inputVal);
     }
+
 
     return (
         <div id='menu'>

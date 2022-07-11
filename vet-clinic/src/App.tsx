@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React,{Component, useState} from 'react';
 import './App.css';
 import {Header} from "./components/Header/Header";
 import {Module} from "./components/Module/Module";
@@ -8,6 +8,7 @@ import {Pets} from "./components/Pets/Pets";
 import { SearchContext } from './context/search.context';
 import {Route, Routes} from "react-router-dom";
 import {AddPetForm} from "./components/AddPetForm/AddPetForm";
+import {DeletePetForm} from "./components/DeletePetForm/DeletePetForm";
 
 
 function App() {
@@ -34,6 +35,12 @@ function App() {
             <AddPetForm/>
           </>
           }/>
+        <Route path="/deletePet/:petDataParams"  element={
+          <>
+            <Header/>
+            <DeletePetForm/>
+          </>
+        }/>
       </Routes>
     </SearchContext.Provider>
   </>

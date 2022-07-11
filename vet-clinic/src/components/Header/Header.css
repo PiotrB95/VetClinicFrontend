@@ -8,6 +8,8 @@ header{
     color: white;
     background-image: url('./menuBackground.jpg');
     font-family: "Comic Sans MS";
+    display: flex;
+    justify-content: center;
 }
 
 a{
@@ -15,4 +17,17 @@ a{
     color: white;
     text-decoration: none;
     cursor: pointer;
+}
+
+.clinicName{
+    display: block;
+    background-color: white;
+    width:100%;
+    text-align: center;
+    color: black;
+    border-top: 5px solid green;
+    border-left: 5px solid green;
+    border-right: 5px solid green;
+    border-radius: 20px;
+
 }

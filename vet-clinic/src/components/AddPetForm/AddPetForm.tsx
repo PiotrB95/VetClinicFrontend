@@ -1,6 +1,6 @@
 import React, {SyntheticEvent, useState} from 'react';
 import './AddPetForm.css';
-import {Btn} from "../common/Btn";
+import {Btn} from "../common/Btn/Btn";
 
 export const AddPetForm = () =>{
     const [loading,setLoading] = useState(false);

@@ -5,7 +5,7 @@ export const Header = () =>{
     return(
         <header>
             <label>
-                <a href="/">😺Przychodnia weterynaryjna🐶</a>
+                <a className="clinicName" href="/">😺Przychodnia weterynaryjna🐶</a>
             </label>
         </header>
     )

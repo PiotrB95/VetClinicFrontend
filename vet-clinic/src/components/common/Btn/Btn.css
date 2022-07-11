@@ -3,7 +3,6 @@
     cursor: pointer;
     border-radius: 0;
     font-size: 2vh;
-
 }
 
 .linkButton{
@@ -18,5 +17,4 @@
 
 .linkButton:hover{
     color: white;
-    font-size: 2.2vh;
 }
