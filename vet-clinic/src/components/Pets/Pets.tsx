@@ -43,8 +43,8 @@ export const Pets = () =>{
                     <td>{pet.ownerPhone}</td>
                     <td>{String(pet.lastVaccinate).substring(0,10)}</td>
                     <td>{String(pet.nextVaccinate).substring(0,10)}</td>
-                    <td><ActionBtn text='❌' petId={pet.id} to={`/deletePet/${pet.id}`}/></td>
-                    <td><ActionBtn text='💉' petId={pet.id} to='/petVaccinate'/></td>
+                    <td><ActionBtn text='❌' petId={pet.id} to={`/deletePet/${pet.id}/${pet.petName}`}/></td>
+                    <td><ActionBtn text='💉' petId={pet.id} to={`/vaccinatePet/${pet.id}/${pet.petName}`}/></td>
                 </tr>
             ))}
             </table>

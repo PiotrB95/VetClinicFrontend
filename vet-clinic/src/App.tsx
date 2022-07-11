@@ -9,6 +9,7 @@ import { SearchContext } from './context/search.context';
 import {Route, Routes} from "react-router-dom";
 import {AddPetForm} from "./components/AddPetForm/AddPetForm";
 import {DeletePetForm} from "./components/DeletePetForm/DeletePetForm";
+import {VaccinatePetForm} from "./components/VaccinatePetForm/VaccinatePetForm";
 
 
 function App() {
@@ -35,10 +36,16 @@ function App() {
             <AddPetForm/>
           </>
           }/>
-        <Route path="/deletePet/:petDataParams"  element={
+        <Route path="/deletePet/:petId/:petName"  element={
           <>
             <Header/>
             <DeletePetForm/>
+          </>
+        }/>
+        <Route path="/vaccinatePet/:petId/:petName"  element={
+          <>
+            <Header/>
+            <VaccinatePetForm/>
           </>
         }/>
       </Routes>
