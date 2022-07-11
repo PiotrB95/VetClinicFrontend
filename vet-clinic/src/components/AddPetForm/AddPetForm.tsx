@@ -1,6 +1,7 @@
 import React, {SyntheticEvent, useState} from 'react';
 import './AddPetForm.css';
 import {Btn} from "../common/Btn/Btn";
+import {DeleteUpdateModule} from "../DeleteUpdateModule/DeleteUpdateModule";
 
 export const AddPetForm = () =>{
     const [loading,setLoading] = useState(false);
@@ -51,7 +52,9 @@ export const AddPetForm = () =>{
     }
 
     if(id){
-        return <h2>Pacjent <strong>{form.petName}</strong> został dodany do bazy z id <strong>{id}</strong></h2>
+        return (
+            <DeleteUpdateModule text={`Pacjent ${form.petName} został dodany do bazy i otrzymał id ${id}.`}/>
+        )
     }
 
 

@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useState} from "react";
 import './Pets.css';
 import {SearchContext} from "../../context/search.context";
 import {PetEntity} from '../../../../../Backend/types';
-import {Btn} from "../common/Btn/Btn";
 import { ActionBtn } from "../common/ActionBtn/ActionBtn";
 
 export const Pets = () =>{
