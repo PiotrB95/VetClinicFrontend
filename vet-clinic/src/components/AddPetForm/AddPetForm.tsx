@@ -2,6 +2,7 @@ import React, {SyntheticEvent, useState} from 'react';
 import './AddPetForm.css';
 import {Btn} from "../common/Btn/Btn";
 import {DeleteUpdateModule} from "../DeleteUpdateModule/DeleteUpdateModule";
+import {Link} from "react-router-dom";
 
 export const AddPetForm = () =>{
     const [loading,setLoading] = useState(false);
@@ -21,7 +22,6 @@ export const AddPetForm = () =>{
         setLoading(true);
 
         try{
-            console.log(form);
             const res = await fetch (`http://localhost:3001/pet`,{
                 method: 'POST',
                 headers:{
@@ -53,7 +53,7 @@ export const AddPetForm = () =>{
 
     if(id){
         return (
-            <DeleteUpdateModule text={`Pacjent ${form.petName} został dodany do bazy i otrzymał id ${id}.`}/>
+            <DeleteUpdateModule text={`Pacjent ${form.petName} został dodany do bazy.`}/>
         )
     }
 
@@ -157,6 +157,7 @@ export const AddPetForm = () =>{
                     </label>
                 </p>
                 <Btn text="Zapisz"/>
+                <Link className ='notDeletePet' to='/'>Nie</Link>
             </form>
         </div>
 

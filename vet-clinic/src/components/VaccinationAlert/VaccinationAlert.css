@@ -1,0 +1,46 @@
+
+.yellowAlert{
+    background-color: yellow;
+    cursor: pointer;
+}
+
+.redAlert{
+    background-color: red;
+    cursor: pointer;
+    content: none;
+}
+
+.noAlert{
+    background-color: white;
+    cursor: pointer;
+}
+
+.redAlert:hover{
+    font-size: 0vh;
+}
+
+.redAlert:hover:after{
+    content: '< 7 dni';
+    text-transform: lowercase;
+    font-size: 2vh;
+}
+
+.yellowAlert:hover{
+    font-size: 0vh;
+}
+
+.yellowAlert:hover:after{
+    content: '< 30 dni';
+    text-transform: lowercase;
+    font-size: 2vh;
+}
+
+.noAlert:hover{
+    font-size: 0vh;
+}
+
+.noAlert:hover:after{
+    content: '> 30 dni';
+    text-transform: lowercase;
+    font-size: 2vh;
+}

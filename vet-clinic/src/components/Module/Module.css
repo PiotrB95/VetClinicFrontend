@@ -1,7 +1,9 @@
 #moduleType{
-    padding: 4px 4px;
+position: absolute;
+    bottom: 0;
+    height: 3vh;
+    background-color: forestgreen;
     font-size: 2vh;
-    font-style: italic;
-    background-color: white;
-    align-self: flex-start;
+    width:100%;
+    text-align: center;
 }

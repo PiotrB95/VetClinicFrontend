@@ -9,6 +9,7 @@ import {Route, Routes} from "react-router-dom";
 import {AddPetForm} from "./components/AddPetForm/AddPetForm";
 import {DeletePetForm} from "./components/DeletePetForm/DeletePetForm";
 import {VaccinatePetForm} from "./components/VaccinatePetForm/VaccinatePetForm";
+import {Module} from "./components/Module/Module";
 
 
 function App() {
@@ -27,24 +28,28 @@ function App() {
           <div id="movingPetList">
             <Pets/>
           </div>
+            <Module/>
           </>
         }/>
         <Route path="/addPet" element={
           <>
             <Header/>
             <AddPetForm/>
+            <Module/>
           </>
           }/>
         <Route path="/deletePet/:petId/:petName"  element={
           <>
             <Header/>
             <DeletePetForm/>
+            <Module/>
           </>
         }/>
         <Route path="/vaccinatePet/:petId/:petName"  element={
           <>
             <Header/>
             <VaccinatePetForm/>
+            <Module/>
           </>
         }/>
       </Routes>

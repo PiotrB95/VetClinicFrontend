@@ -3,6 +3,7 @@ import './Pets.css';
 import {SearchContext} from "../../context/search.context";
 import {PetEntity} from '../../../../../Backend/types';
 import { ActionBtn } from "../common/ActionBtn/ActionBtn";
+import {VaccinationAlert} from "../VaccinationAlert/VaccinationAlert";
 
 export const Pets = () =>{
     const {search} = useContext(SearchContext);
@@ -17,6 +18,24 @@ export const Pets = () =>{
         })();
     },[search]);
 
+    const vaccinationAlert = (nextVaccinate:string) =>{
+        const thirteenDaysLater = new Date(new Date().getTime() + (30 * 24 * 60 * 60 * 1000));
+        const sevenDaysLater = new Date(new Date().getTime() + (7 * 24 * 60 * 60 * 1000));
+
+        const vaccineReminding = new Date(nextVaccinate);
+
+        if(sevenDaysLater > vaccineReminding){
+            return <VaccinationAlert class='redAlert' nextVaccinate={nextVaccinate}/>
+        }else if(thirteenDaysLater > vaccineReminding){
+            return <VaccinationAlert class='yellowAlert' nextVaccinate={nextVaccinate}/>
+        }else{
+            return <VaccinationAlert class='noAlert' nextVaccinate={nextVaccinate}/>
+        }
+
+    }
+
+
+
     return <>
         <div id='pets'>
             <table>
@@ -29,8 +48,8 @@ export const Pets = () =>{
                     <th>Numer kontaktowy</th>
                     <th>Ostatnie szczepienie</th>
                     <th>Następne szczepienie</th>
-                    <th></th>
-                    <th></th>
+                    <th>Usuń</th>
+                    <th>Zaszczep</th>
                 </tr>
             {pets.map((pet,index) =>(
                 <tr key = {pet.id}>
@@ -41,9 +60,9 @@ export const Pets = () =>{
                     <td>{pet.ownerName}</td>
                     <td>{pet.ownerPhone}</td>
                     <td>{String(pet.lastVaccinate).substring(0,10)}</td>
-                    <td>{String(pet.nextVaccinate).substring(0,10)}</td>
-                    <td><ActionBtn text='❌' petId={pet.id} to={`/deletePet/${pet.id}/${pet.petName}`}/></td>
-                    <td><ActionBtn text='💉' petId={pet.id} to={`/vaccinatePet/${pet.id}/${pet.petName}`}/></td>
+                    {vaccinationAlert(pet.nextVaccinate)}
+                    <td><ActionBtn class={'normalButton'} text='❌' petId={pet.id} to={`/deletePet/${pet.id}/${pet.petName}`}/></td>
+                    <td><ActionBtn class={'normalButton'} text='💉' petId={pet.id} to={`/vaccinatePet/${pet.id}/${pet.petName}`}/></td>
                 </tr>
             ))}
             </table>

@@ -20,12 +20,11 @@ table, td, tr, th{
 table {
     width: 100%;
     margin-top: 2vh;
-
-
+    text-transform: capitalize;
 }
 
 td,th{
-    width: 10%;
+    width: auto;
 }
 
 
@@ -33,7 +32,5 @@ th {
     background: white;
     position: sticky;
     top: 0vh;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding: 1vh 1vw;
 }
-

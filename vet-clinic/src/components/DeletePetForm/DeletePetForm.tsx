@@ -19,7 +19,7 @@ export const DeletePetForm = () =>{
             const found = await findOne.json();
 
             if(!found || found === null){
-                return<h1>nie ma takiego pacjenta</h1>
+                return <DeleteUpdateModule text={`Nie ma takiego pacjenta.`}/>
             }
 
             const deletePet = await fetch(`http://localhost:3001/pet/${petId}`,{
@@ -35,12 +35,12 @@ export const DeletePetForm = () =>{
 
 
     if (loading){
-        return <h2>Trwa usuwanie pacjenta</h2>
+        return <h2>Trwa usuwanie pacjenta...</h2>
     }
 
     if(deletedId){
         return (
-            <DeleteUpdateModule text={`Pacjent ${petName} o id ${petId} został usunięty.`}/>
+            <DeleteUpdateModule text={`Pacjent ${petName} został usunięty.`}/>
         )
     }
 
@@ -49,7 +49,7 @@ export const DeletePetForm = () =>{
         <div className="flexBackground">
             <form action="" className="deletePet" onSubmit={deletePet}>
                 <p className="formTitle">Formularz usuwania pacjenta</p>
-                    <h1>Pacjent {petName} o {petId} zostanie usunięty.</h1>
+                    <h1>Pacjent {petName} zostanie usunięty.</h1>
                 <Btn text="Ok"/>
                 <Link className ='notDeletePet' to='/'>Nie</Link>
             </form>

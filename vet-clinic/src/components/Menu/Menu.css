@@ -29,4 +29,5 @@ button.search{
 
 button.search:hover{
     color: white;
+    font-size: 2.2vh;
 }

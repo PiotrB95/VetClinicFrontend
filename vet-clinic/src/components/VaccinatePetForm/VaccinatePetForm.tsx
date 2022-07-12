@@ -15,7 +15,7 @@ export const VaccinatePetForm = () =>{
     const nextYear = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
     const nextVaccination = `${nextYear.toISOString().substring(0,10)}`;
 
-    const vaccinatationPet = async(e:SyntheticEvent) =>{
+    const vaccinationPet = async(e:SyntheticEvent) =>{
         e.preventDefault();
         setLoading(true);
 
@@ -24,7 +24,7 @@ export const VaccinatePetForm = () =>{
             const found = await findOne.json();
 
             if(!found || found === null){
-                return<h1>nie ma takiego pacjenta</h1>
+                return <DeleteUpdateModule text={`Nie ma takiego pacjenta.`}/>
             }
 
 
@@ -47,7 +47,7 @@ export const VaccinatePetForm = () =>{
 
     if(vaccinationId){
         return (
-            <DeleteUpdateModule text={`Pacjent ${petName} o id ${petId} został zaszczepiony w dniu ${lastVaccination}.
+            <DeleteUpdateModule text={`Pacjent ${petName} został zaszczepiony w dniu ${lastVaccination}.
               Następne szczepienie przewidziane na dzień ${nextVaccination}.`}/>
         )
     }
@@ -55,9 +55,9 @@ export const VaccinatePetForm = () =>{
 
     return (
         <div className="flexBackground">
-            <form action="" className="deletePet" onSubmit={vaccinatationPet}>
+            <form action="" className="deletePet" onSubmit={vaccinationPet}>
                 <p className="formTitle">Formularz szczepienia pacjenta</p>
-                <h1>Pacjent {petName} o {petId} zostanie zaszczepiony.</h1>
+                <h1>Pacjent {petName} zostanie zaszczepiony.</h1>
                 <Btn text="Ok"/>
                 <Link className ='notDeletePet' to='/'>Nie</Link>
             </form>
