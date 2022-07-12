@@ -2,17 +2,22 @@
 .yellowAlert{
     background-color: yellow;
     cursor: pointer;
+    border: 0px solid white;
+    border-radius: 20px;
 }
 
 .redAlert{
     background-color: red;
     cursor: pointer;
-    content: none;
+    border: 0px solid white;
+    border-radius: 20px;
 }
 
 .noAlert{
     background-color: white;
     cursor: pointer;
+    border: 0px solid white;
+    border-radius: 20px;
 }
 
 .redAlert:hover{
@@ -22,7 +27,7 @@
 .redAlert:hover:after{
     content: '< 7 dni';
     text-transform: lowercase;
-    font-size: 2vh;
+    font-size: 2.2vh;
 }
 
 .yellowAlert:hover{
@@ -32,7 +37,7 @@
 .yellowAlert:hover:after{
     content: '< 30 dni';
     text-transform: lowercase;
-    font-size: 2vh;
+    font-size: 2.2vh;
 }
 
 .noAlert:hover{
@@ -42,5 +47,5 @@
 .noAlert:hover:after{
     content: '> 30 dni';
     text-transform: lowercase;
-    font-size: 2vh;
+    font-size: 2.2vh;
 }
