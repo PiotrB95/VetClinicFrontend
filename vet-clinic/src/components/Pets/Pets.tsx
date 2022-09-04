@@ -6,6 +6,9 @@ import {VaccinationAlert} from "../VaccinationAlert/VaccinationAlert";
 import {PetEntity} from "types";
 
 
+
+
+
 export const Pets = () =>{
     const {search} = useContext(SearchContext);
     const [pets,setPets] = useState<PetEntity[]>([]);
