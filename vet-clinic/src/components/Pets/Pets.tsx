@@ -1,9 +1,10 @@
 import React, {useContext, useEffect, useState} from "react";
 import './Pets.css';
 import {SearchContext} from "../../context/search.context";
-import {PetEntity} from '../../../../../Backend/types';
 import { ActionBtn } from "../common/ActionBtn/ActionBtn";
 import {VaccinationAlert} from "../VaccinationAlert/VaccinationAlert";
+import {PetEntity} from "types";
+
 
 export const Pets = () =>{
     const {search} = useContext(SearchContext);
