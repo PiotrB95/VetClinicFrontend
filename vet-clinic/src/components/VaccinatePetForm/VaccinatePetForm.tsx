@@ -3,6 +3,8 @@ import './VaccinatePetForm.css';
 import {Btn} from "../common/Btn/Btn";
 import {Link, useParams} from "react-router-dom";
 import {DeleteUpdateModule} from "../DeleteUpdateModule/DeleteUpdateModule";
+import {apiURL} from "../../config/api";
+
 
 export const VaccinatePetForm = () =>{
     const [loading,setLoading] = useState(false);
@@ -20,7 +22,7 @@ export const VaccinatePetForm = () =>{
         setLoading(true);
 
         try {
-            const findOne = await fetch(`http://localhost:3001/pet/${petId}`);
+            const findOne = await fetch(`${apiURL}/pet/${petId}`);
             const found = await findOne.json();
 
             if(!found || found === null){
@@ -28,7 +30,7 @@ export const VaccinatePetForm = () =>{
             }
 
 
-            const vaccinePet = await fetch(`http://localhost:3001/pet/${petId}/${lastVaccination}/${nextVaccination}`,{
+            const vaccinePet = await fetch(`${apiURL}/pet/${petId}/${lastVaccination}/${nextVaccination}`,{
                 method:'PATCH',
             })
             const vaccinedPet = await vaccinePet.json();

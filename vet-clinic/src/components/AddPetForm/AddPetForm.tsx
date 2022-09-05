@@ -3,6 +3,8 @@ import './AddPetForm.css';
 import {Btn} from "../common/Btn/Btn";
 import {DeleteUpdateModule} from "../DeleteUpdateModule/DeleteUpdateModule";
 import {Link} from "react-router-dom";
+import {apiURL} from "../../config/api";
+
 
 export const AddPetForm = () =>{
     const [loading,setLoading] = useState(false);
@@ -22,7 +24,7 @@ export const AddPetForm = () =>{
         setLoading(true);
 
         try{
-            const res = await fetch (`http://localhost:3001/pet`,{
+            const res = await fetch (`${apiURL}`,{
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json',

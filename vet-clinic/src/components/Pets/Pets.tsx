@@ -4,6 +4,8 @@ import {SearchContext} from "../../context/search.context";
 import { ActionBtn } from "../common/ActionBtn/ActionBtn";
 import {VaccinationAlert} from "../VaccinationAlert/VaccinationAlert";
 import {PetEntity} from "types";
+import {apiURL} from "../../config/api";
+
 
 
 export const Pets = () =>{
@@ -12,7 +14,7 @@ export const Pets = () =>{
 
     useEffect(() =>{
         (async () =>{
-            const res = await fetch(`http://localhost:3001/pet/search/${search}`);
+            const res = await fetch(`${apiURL}/pet/search/${search}`);
             const data = await res.json();
 
             setPets(data);
