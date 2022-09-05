@@ -20,7 +20,7 @@ export const Pets = () =>{
             setPets(data);
         })();
     },[search]);
-
+    console.log(apiURL);
     const vaccinationAlert = (nextVaccinate:string) =>{
         const thirteenDaysLater = new Date(new Date().getTime() + (30 * 24 * 60 * 60 * 1000));
         const sevenDaysLater = new Date(new Date().getTime() + (7 * 24 * 60 * 60 * 1000));

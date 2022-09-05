@@ -24,7 +24,7 @@ export const AddPetForm = () =>{
         setLoading(true);
 
         try{
-            const res = await fetch (`${apiURL}`,{
+            const res = await fetch (`${apiURL}/pet`,{
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json',
