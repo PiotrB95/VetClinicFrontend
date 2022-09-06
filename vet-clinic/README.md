@@ -1,46 +1,116 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Vet Clinic App
 
-## Available Scripts
+This app represents virtual vet clinic. It contains list of all patients includes their age, name, specie, owner data and date of previous and next vaccination.
+Virtual Vet Clinic allows you to to some basic operations like:
+- adding new pet,
+- removing pet from the list,
+- searching for a pet by its name, specie etc.
+- vaccinating - it sets todays date as previous vaccination, and one year later as next vaccination.
 
-In the project directory, you can run:
+In addition field next vaccination shows time left to next visit:
+- white background - more than 30 days
+- yellow background - less than 30 days
+- red background - less than 7 days
+All of above informations are available to read when you put mouse pointer on next vaccination field.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Demo
 
-### `npm test`
+**In case of non-authorized access it is asked not to use inappropriate words in application.**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://piotrb.networkmanager.pl/
+## Run Locally
 
-### `npm run build`
+Prepare your local server e.g. XAMPP. And database e.g. HeidiSQL, DBeaver.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone the projects
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Server
+```bash
+  git clone https://github.com/PiotrB95/VetClinicBackend
+```
+- Client
+```bash
+  git clone https://github.com/PiotrB95/VetClinicFrontend
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Go to the project directory
 
-### `npm run eject`
+```bash
+  cd VetClinicBackend
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+  cd VetClinicFrontend
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+  npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Start the server via script in package.json
+```bash
+  start:dev 
+```
 
-## Learn More
+Start the client via script in package.json
+```bash
+  start
+```
+## Environment Variables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run this project, you will need to add the following environment variables to your config.ts file
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+export const config = {
+    dbHost: *yourDbHost*,
+    dbUser: *yourDbUser*,
+    dbPassword: *yourDbPassword*,
+    dbDatabase: *yourDbName*,
+    corsOrigin: 'http://localhost:3000',
+}
+```
+The file named **baza.txt** contains database structure prepared for this application.\
+It can be also imported via HeidiSQL to automatically create DB. 
+## API Reference
+
+
+*pet*
+____
+  #### Request
+
+| Path                                 | Method   | Description                                         | Params               
+| :----------------------------------- | :------- | :-------------------------------------------------- | :------------------------------- 
+| `/search`                            | `GET`    | Allows to find all pets.                            | - 
+| `/search/:searchValue?`              | `GET`    | Allows to find specific pet by param.               | searchValue     
+| `/:id`                               | `GET`    | Allows to find one pet.                             | id       
+| `/`                                  | `POST`   | Allows to add pet.                                  | **PetRecord**
+| `/:id`                               | `DELETE` | Allows to remove pet.                               | id   
+| `/:id/:lastVaccinate/:nextVaccinate` | `PATCH`  | Allows to set previous and next data of vaccination | id, lastVaccinate, nextVaccinate             
+
+**PetRecord** structure:
+```bash
+id: string;
+petName: string;
+petType: string;
+petAge: number;
+ownerName: string;
+ownerPhone: number;
+lastVaccinate: string;
+nextVaccinate: string;
+```
+## Authors
+
+- [@piotrb95](https://github.com/PiotrB95)
+
+
+## Tech Stack
+
+**Client:** React, HTML, CSS
+
+**Server:** Node, Express
+
